@@ -5,14 +5,13 @@
 <body>
     <div><h1>This is where your headline goes</h1></div>
     <div>
-        <p>This is where the date goes</p>
-        <h2><a href="">This is the post title</a></h2>
-        <p>This is content.</p>
-    </div>
-    <div>
-        <p>This is where the date goes</p>
-        <h2><a href="">This is the second post title</a></h2>
-        <p>This is content.</p>
+        {% for post in posts %}
+            <div>
+                <p> {{ post.published_date }}</p>
+                <h2> <a href=""></a>{{ post.title }}</h2>
+                <p> {{post.text|linebreaksbr }} </p>
+            </div>
+        {% endfor %}
     </div>
 </body>
 </html>
